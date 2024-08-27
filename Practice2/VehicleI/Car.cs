@@ -28,7 +28,10 @@ namespace Practice2.VehicleI
             Console.Write($",The Car is fueled by {FuelType}\n");
         }
 
-        public 
+        public override void StartEngine()
+        {
+            Console.WriteLine($"Staring the Car Engine for {base.Model}!\n");
+        }
 
     }
 }

@@ -70,6 +70,22 @@ namespace Practice2
             //4. Exercise 4 Polymorphism, Alter Vehicle add a StartEngine 
             Console.WriteLine("\n4. Vehicle Engine (Polymorphism):\n");
 
+            List<Vehicle> vehicles = new List<Vehicle>();
+
+            vehicles.Add(new Car("Tesla", "Model 3", 2023, true, "Electric"));
+            vehicles.Add(new Car("Nissan", "X-Trail", 2018, false, "Gasoline"));
+            vehicles.Add(new Motorcycle("BMW","X3", 2019, "Cruiser", false));
+            vehicles.Add(new Motorcycle("Honda","PCX", 2015, "Scooter", false));
+
+            foreach (Vehicle v in vehicles)
+            {
+                v.DisplayDetails();
+                v.StartEngine();
+            }
+
+            //5. Iinterfaces Music and Video Player
+            Console.WriteLine("\n5. Music and Video Player (Interfaces):\n");
+
         }
     }
 }

@@ -25,5 +25,10 @@ namespace Practice2.VehicleI
             Console.Write($"The Motorcycle is type {Type} ");
             Console.Write($",The Motorcycle {(HasHasWindShield ? "has" : "doens't have")} a WindShield\n");
         }
+
+        public override void StartEngine()
+        {
+            Console.WriteLine($"Starting Motorcycle Engine for {base.Model}!\n");
+        }
     }
 }

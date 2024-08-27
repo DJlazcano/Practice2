@@ -23,5 +23,10 @@ namespace Practice2.VehicleI
         {
             Console.WriteLine($"Make: {Make}, Model: {Model}, Year: {Year}");
         }
+
+        public virtual void StartEngine()
+        {
+            Console.WriteLine("Starting Engine!\n");
+        }
     }
 }
