@@ -1,4 +1,6 @@
-﻿using Practice2.StudentsC;
+﻿using Practice2.LibraryA;
+using Practice2.StudentsC;
+using Practice2.VehicleI;
 
 namespace Practice2
 {
@@ -9,7 +11,7 @@ namespace Practice2
         {
 
             //1. Student Classes Exercise
-            Console.WriteLine("Student Class Exercise:\n");
+            Console.WriteLine("1. Student Class Exercise (Classes):\n");
 
             Classroom classroom = new Classroom();
 
@@ -34,6 +36,39 @@ namespace Practice2
             classroom.ListStudents();
 
             //2. Library Asociation Exercise
+            Console.WriteLine("2. Library Exercise (Association):\n");
+            Library library = new Library();
+
+            Book book1 = new Book("Harry Potter", 1);
+            Book book2 = new Book("Don Quixote", 3);
+
+            library.AddBook(book1);
+            library.AddBook(book2);
+            library.AddBook("Game of Thrones", 10);
+            library.AddBook("To Kill a Mockingbird", 5);
+
+            library.ListBooks();
+
+            library.RemoveBook(book1);
+            library.RemoveBook(5);
+
+            library.ListBooks();
+
+            //3. Inheritance Exercise Vehicle
+            Console.WriteLine("\n3. Vehicle exercise (Inheritance):\n");
+
+            Car car = new Car("Nissan", "X-Trail", 2015, false, "Gas");
+            Motorcycle motorcycle = new Motorcycle("BMW", "R80", 2024, "Cruiser", true);
+
+            car.DisplayDetails();
+            motorcycle.DisplayDetails();
+
+            Console.WriteLine("\nUsing Upcasting:");
+            Vehicle vehicle = car;
+            vehicle.DisplayDetails();
+
+            //4. Exercise 4 Polymorphism, Alter Vehicle add a StartEngine 
+            Console.WriteLine("\n4. Vehicle Engine (Polymorphism):\n");
 
         }
     }
