@@ -2,6 +2,7 @@
 using Practice2.MusicVideoI;
 using Practice2.StudentsC;
 using Practice2.VehicleI;
+using Practice2.EmployeeB;
 
 namespace Practice2
 {
@@ -97,6 +98,52 @@ namespace Practice2
 
             //5. Iinterfaces Music and Video Player
             Console.WriteLine("\n6. Employee (BaseClass):\n");
+
+            List<Employee> employees = new List<Employee>();
+
+            Employee employ = new Employee("Alex", 1, 100000);
+            Developer dev = new Developer("John", 4509, 20000, 2);
+            Manager manager = new Manager("Smith", 5, 30000);
+
+            dev.Addlenguage("JAVA");
+            dev.Addlenguage("PYTHON");
+            dev.Addlenguage("C#");
+
+            Console.WriteLine(dev.ToString());
+            dev.ListLenguages();
+
+            manager.AddMemeber(dev);
+            manager.AddMemeber(new Developer("Harold", 405, 30000, 3));
+            manager.AddMemeber(employ);
+
+            Console.WriteLine(manager.ToString() + "\n");
+            manager.ListTeam();
+
+            employees.Add(manager);
+            employees.Add(dev);
+            employees.Add(manager);
+            employees.Add(new Developer("Sofia", 16, 50000, 4));
+
+
+            Console.WriteLine("Start Working:");
+            foreach (Employee employee in employees)
+            {
+                if (employee is Manager)
+                {
+                    Manager m = (Manager)employee;
+                    m.Work();
+
+                }
+                else if (employee is Developer)
+                {
+                    Developer d = (Developer)employee;
+                    d.Work();
+                }
+                else
+                {
+                    Console.WriteLine("Not a manager neither a Developer...");
+                }
+            }
         }
     }
 }
