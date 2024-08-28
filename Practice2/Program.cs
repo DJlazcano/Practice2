@@ -1,4 +1,5 @@
 ﻿using Practice2.LibraryA;
+using Practice2.MusicVideoI;
 using Practice2.StudentsC;
 using Practice2.VehicleI;
 
@@ -74,8 +75,8 @@ namespace Practice2
 
             vehicles.Add(new Car("Tesla", "Model 3", 2023, true, "Electric"));
             vehicles.Add(new Car("Nissan", "X-Trail", 2018, false, "Gasoline"));
-            vehicles.Add(new Motorcycle("BMW","X3", 2019, "Cruiser", false));
-            vehicles.Add(new Motorcycle("Honda","PCX", 2015, "Scooter", false));
+            vehicles.Add(new Motorcycle("BMW", "X3", 2019, "Cruiser", false));
+            vehicles.Add(new Motorcycle("Honda", "PCX", 2015, "Scooter", false));
 
             foreach (Vehicle v in vehicles)
             {
@@ -86,6 +87,16 @@ namespace Practice2
             //5. Iinterfaces Music and Video Player
             Console.WriteLine("\n5. Music and Video Player (Interfaces):\n");
 
+            VideoPlayer videoPlayer = new VideoPlayer();
+            MusicPlayer musicPlayer = new MusicPlayer();
+
+            musicPlayer.Play();
+            videoPlayer.Play();
+            videoPlayer.Pause();
+            musicPlayer.Pause();
+
+            //5. Iinterfaces Music and Video Player
+            Console.WriteLine("\n6. Employee (BaseClass):\n");
         }
     }
 }
